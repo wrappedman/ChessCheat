@@ -1,0 +1,4 @@
+# ChessCheat runtime dependencies.
+# Everything else (tkinter, sqlite3, subprocess, threading)
+# is part of the Python standard library.
+chess>=1.11.0,<2.0.0
