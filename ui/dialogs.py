@@ -242,7 +242,7 @@ class _BoardEditor(tk.Frame):
         for row in range(8):
             for column in range(8):
                 # a8 is a dark square; light squares have odd screen parity.
-                color = AppColors.BOARD_LIGHT if (row + column) % 2 == 1 else AppColors.BOARD_DARK
+                color = AppColors.BOARD_DARK if (row + column) % 2 == 1 else AppColors.BOARD_LIGHT
                 x, y = column * square, row * square
                 self.canvas.create_rectangle(x, y, x + square, y + square, fill=color, outline=color)
         for square_index, piece in self.pieces.items():

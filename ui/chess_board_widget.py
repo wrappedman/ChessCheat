@@ -68,7 +68,7 @@ class ChessBoardCanvas(tk.Canvas):
         for row in range(8):
             for column in range(8):
                 # a8 is a dark square; light squares have odd screen parity.
-                base = AppColors.BOARD_LIGHT if (row + column) % 2 == 1 else AppColors.BOARD_DARK
+                base = AppColors.BOARD_DARK if (row + column) % 2 == 1 else AppColors.BOARD_LIGHT
                 square = self._screen_square(column, row, state.is_flipped)
                 color = base
                 if state.last_move and square in (state.last_move.from_square, state.last_move.to_square):
@@ -142,7 +142,7 @@ class ChessBoardCanvas(tk.Canvas):
             x, y = square_origin(target, square, state.is_flipped, left, top)
             column = int((x - left) / square)
             row = int((y - top) / square)
-            base = AppColors.BOARD_LIGHT if (row + column) % 2 == 1 else AppColors.BOARD_DARK
+            base = AppColors.BOARD_DARK if (row + column) % 2 == 1 else AppColors.BOARD_LIGHT
             hint_color = blend_hex(base, "#000000", 0.38)
             radius = square * 0.13
             occupied = state.board.piece_at(target) is not None or state.board.is_en_passant(
